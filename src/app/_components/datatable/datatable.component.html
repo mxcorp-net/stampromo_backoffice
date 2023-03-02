@@ -1,0 +1,52 @@
+<pgcard [Close]="false" [Toggle]="false" [ProgressType]="'circle'" [ProgressColor]="'primary'" [Loading]="isLoading"
+        [Message]="errorMessage" [ShowMessage]="showMessage" (onRefresh)="reloadTable()">
+    <ng-template #CardTitle>{{title}}</ng-template>
+    <ng-template #CardExtraControls>
+        <li>
+            <div class="dropdown" dropdown>
+                <a href="javascript:void(0);" dropdownToggle role="button" aria-expanded="false">
+                    <i class="card-icon card-icon-settings"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" *dropdownMenu role="menu"
+                     aria-labelledby="card-settings">
+                    <a href="javascript:void(0);" class="dropdown-item">Export</a>
+                    <a href="javascript:void(0);" class="dropdown-item">Print</a>
+                </div>
+            </div>
+        </li>
+    </ng-template>
+    <div class="app-datatable-search" *ngIf="settings.ActiveSearch">
+        <div class="row m-0">
+            <div class="col-md-6 p-0">
+                <button class="btn btn-primary" (click)="newClick($event)">New</button>
+            </div>
+            <div class="col-md-6 p-0" *ngIf="settings.ActiveSearch">
+                <app-search (onPressEnter)="search($event)"></app-search>
+            </div>
+        </div>
+    </div>
+    <div class="app-datatable-container">
+        <table>
+            <thead class="app-datatable-header">
+            <tr>
+                <th *ngFor="let column of source.Columns">
+                    {{column.label || column.name}}
+                </th>
+            </tr>
+            </thead>
+            <tbody class="app-datatable-body">
+            <tr *ngFor="let row of source.Rows" (click)="rowClick(row)">
+                <td *ngFor="let column of source.Columns" align="{{column.align}}">
+                    {{row[column.name.toCamelCase()]}}
+                </td>
+            <tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+    <div class="app-datatable-pagination">
+        <app-pagination></app-pagination>
+    </div>
+</pgcard>

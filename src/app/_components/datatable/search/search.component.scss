@@ -1,0 +1,25 @@
+.form-group{
+  justify-content: flex-end;
+  input{
+    width: 150px;
+    border: 1px solid rgba(230,230,230,.7);
+    transform-origin: 50%;
+    -webkit-transition: 1s ease-out;
+    -moz-transition: 1s ease-out;
+    -o-transition: 1s ease-out;
+    transition: 1s ease-out;
+    padding: 0 20px;
+  }
+  :focus{
+    width: 50%;
+  }
+  :focus .input-group-prepend .input-group-text{
+    background-color: blue;
+    width: 50px;
+  }
+  .input-group-prepend{
+    .input-group-text{
+      border: 1px solid rgba(230,230,230,.7);
+    }
+  }
+}

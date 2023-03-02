@@ -1,0 +1,10 @@
+<div class="form-group input-group transparent">
+    <input type="text" placeholder="Search"
+           [(ngModel)]="datatableSearchInput"
+           (keypress)="onKeyPress($event)">
+    <div class="input-group-prepend">
+         <span class="input-group-text transparent">
+             <i class="pg-icon">search</i>
+         </span>
+    </div>
+</div>

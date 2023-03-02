@@ -1,0 +1,49 @@
+.app-datatable-search {
+  width: calc(100% - 5px);
+}
+
+
+.app-datatable-container {
+  width: 100%;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+
+    thead tr th {
+      text-align: left;
+      border-bottom: 1px solid rgba(230, 230, 230, .7);
+      color: #757575;
+      min-width: 50px;
+      padding: 12px 20px 12px 12px;
+
+      span {
+        //TODO Changes is the column name changes to a span
+      }
+    }
+
+    tbody {
+      border-bottom: solid 1px rgba(230, 230, 230, .7);
+
+      tr td {
+        min-width: 50px;
+        padding: 12px 20px 12px 12px;
+        border-bottom: solid 1px rgba(230, 230, 230, .7);
+      }
+      tr{
+        cursor: pointer;
+      }
+      tr:hover {
+        background-color: rgba(232, 232,232, 0.4);
+        cursor: pointer;
+      }
+
+    }
+
+
+  }
+}
+
+//.app-datatable-container{
+//  width: 100%;
+//}
